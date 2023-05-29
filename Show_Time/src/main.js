@@ -41,7 +41,7 @@ export async function addNewGenre(title) {
     try {
       const docRef = await db.collection('genre_col').add({
         title: title,
-        backgroundImg:'../src/assets/default_background.jpg',
+        backgroundImg:'../src/assets/default' + Math.round(Math.random(4)) + '_background.jpg',
         pressed: 0
       });
       return docRef.id;
